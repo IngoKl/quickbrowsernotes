@@ -3,12 +3,18 @@ var note = document.getElementById("note");
 var mdmodeStatus = document.getElementById("mdmode-status");
 
 function renderMarkdown() {
-    markdown = true;
-    var md = window.markdownit();
-    note.innerHTML = md.render(localStorage.getItem('note_md'));
-    note.contentEditable = false;
-    mdmodeStatus.innerText = '📖 View Mode';
-    
+    var  note_md = localStorage.getItem('note_md');
+    console.log(note_md)
+
+    if (note_md) {
+        markdown = true;
+        var md = window.markdownit();
+        note.innerHTML = md.render(note_md);
+        note.contentEditable = false;
+        mdmodeStatus.innerText = '📖 View Mode';
+    } else {
+        mdmodeStatus.innerText = '✍ Edit Mode';
+    }
 }
 
 function switchMarkdown() {
@@ -34,8 +40,16 @@ mdmodeStatus.onclick = function(){
 };
 
 document.addEventListener("DOMContentLoaded", function() {
-    note.innerText = localStorage.getItem('note_md');
-    renderMarkdown();
+    var note_md = localStorage.getItem('note_md');
+
+    if (note_md) {
+        note.innerText = localStorage.getItem('note_md');
+        renderMarkdown();
+    } else {
+        note.innerText = 'Type here ...';
+        mdmodeStatus.innerText = '✍ Edit Mode';
+    }
+
 });
 
 document.getElementById("note").addEventListener("input", function() {
