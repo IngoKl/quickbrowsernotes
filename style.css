@@ -1,3 +1,7 @@
+h1 {
+    font-size: 3.5em;
+}
+
 body {
     display: grid;
     place-items: center;
@@ -8,15 +12,29 @@ body {
 .note {
     background-color: #2c2f35;
     color: #f0f0f0;
+
     padding: 10px;
-    min-width: 50%;
+    min-width: 70%;
+    border-radius: 8px;
+
+    font-size: 1.2em;
 }
 
 .mdmode {
     text-align: center;
-    margin-top: 1em;
+    margin-top: 1.2em;
 }
 
-#mdmode {
-    font-weight: 800;
+#mdmode-status {
+    color: #f0f0f0;
+    background-color: #2c2f35;
+
+    padding: 10px;
+    border-radius: 8px;
+
+    font-weight: 500;
+}
+
+#mdmode-status:hover {
+    background-color: #565a63;
 }
