@@ -1,0 +1,22 @@
+body {
+    display: grid;
+    place-items: center;
+
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.note {
+    background-color: #2c2f35;
+    color: #f0f0f0;
+    padding: 10px;
+    min-width: 50%;
+}
+
+.mdmode {
+    text-align: center;
+    margin-top: 1em;
+}
+
+#mdmode {
+    font-weight: 800;
+}
